@@ -207,3 +207,20 @@ Close scoped task: ux helper smoke task
 
 ### Remaining
 - use the helper layer on the next real bounded task when needed
+---
+
+## 2026-05-27 01:10
+### Task
+Close scoped task: document helper workflow in README
+
+### Done
+- recorded outcome: accept
+- accepted the README helper-workflow documentation change from the isolated Codex worktree
+- merged the README.md update into the main checkout for follow-up commit/push
+
+### Verified
+- review gate returned recommended_action=accept for the README-only worktree diff
+- manual review confirmed the new section matches the implemented task_start/task_run/task_close flow
+
+### Remaining
+- commit and push the accepted README plus project-state updates when ready

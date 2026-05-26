@@ -21,6 +21,17 @@ supporting progress and decision records used across workflow steps.
 This sandbox keeps those roles visible without including credentials, private
 infrastructure details, or production behavior.
 
+## Helper Workflow
+
+For a scoped task, the thin helper flow is:
+
+1. Use `task_start.py` to start from a prepared `.hermes/` task handoff.
+2. Use `task_run.py` to run Codex on that active task in its isolated worktree.
+3. Use `task_close.py` to record the task outcome after review.
+
+The default first-pass review is the deterministic review gate, which checks
+that the completed work remains within its allowed scope.
+
 ## Next Steps
 
 Upcoming sandbox tasks may exercise small documentation or workflow updates,
