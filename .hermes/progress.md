@@ -68,3 +68,29 @@ Add a simple public-safe `index.html` landing page through the Hermes -> handoff
 ### Remaining
 - commit the `index.html` and task-state changes
 - move on to Task 3: build a tiny todo app
+
+---
+
+## 2026-05-26 20:28
+### Task
+Build a tiny public-safe todo app through the Hermes -> handoff -> Codex workflow.
+
+### Done
+- updated .hermes/handoff.md with a scoped multi-file task for a tiny todo app
+- updated .hermes/spec.md to reflect the interactive frontend validation step
+- sent the task to Codex CLI as the implementation worker
+- Codex converted `index.html` from a static landing page into the todo app shell
+- added `style.css` for standalone styling
+- added `script.js` for add / complete / delete interactions and live task count
+
+### Verified
+- inspected `index.html`, `style.css`, and `script.js`
+- reviewed the git diff for the app files
+- ran `node --check script.js` successfully
+- executed a lightweight Node-based interaction harness that validated add, complete, delete, count updates, and empty-state restoration
+- confirmed no secrets, private infrastructure details, frameworks, package managers, or build tooling were introduced
+- attempted browser-level verification, but the sandbox blocked both local port binding and the browser daemon
+
+### Remaining
+- commit the todo app and task-state changes
+- optionally run Gemini CLI as a reviewer on the completed demo

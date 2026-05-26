@@ -9,9 +9,9 @@ Initialize this test repository with the standard Hermes project-state files and
 ## Background
 Context for the task:
 - this is a public sandbox repository created to test the Hermes workflow
-- the repository started minimal and now contains a README plus .hermes/ workflow files
+- the repository started minimal and now contains a README, workflow files, and a simple landing page
 - Hermes already uses OmniRoute for model routing, Codex CLI for implementation-heavy work, and Gemini CLI as an optional reviewer
-- the current phase is validating the workflow through incremental low-risk tasks
+- the current phase is validating the workflow through incremental low-risk tasks, including a small interactive frontend example
 
 ## Scope
 What is included in this task:
@@ -48,4 +48,4 @@ The task is complete when:
 in progress
 
 ## Last Updated
-2026-05-26 20:23
+2026-05-26 20:28

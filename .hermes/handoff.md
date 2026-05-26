@@ -1,20 +1,22 @@
 # Handoff
 
 ## Task
-Add a simple public-safe `index.html` landing page for this sandbox repository.
+Turn the current static sandbox page into a tiny public-safe todo app using plain HTML, CSS, and JavaScript.
 
 ## Goal
-Create a minimal static HTML page that mirrors the repository purpose and briefly explains the Hermes workflow sandbox in a browser-friendly way.
+Create a minimal interactive demo that lets a user add, complete, and delete todo items while keeping the repository lightweight and easy to inspect.
 
 ## Project Context
 Short context:
 - this is a public sandbox repository for testing the Hermes project-state workflow
-- the README already explains the workflow in markdown form
-- this is the second small workflow task after the README documentation pass
-- the page should stay intentionally simple and require no build tooling
+- the repository already has a README and a simple landing page
+- this is the third workflow validation task and the first multi-file interactive implementation
+- the app should stay intentionally small and require no build tooling
 
 ## Relevant Files
 - index.html
+- style.css
+- script.js
 - README.md
 - .hermes/spec.md
 - .hermes/handoff.md
@@ -22,35 +24,40 @@ Short context:
 
 ## Current State
 What already exists now:
-- README.md contains a structured sandbox overview
-- no HTML page exists yet
-- the repository is still intentionally minimal
-- this task should focus on adding one simple static page
+- `index.html` is a single self-contained static landing page with inline styles
+- there is no JavaScript yet
+- there is no standalone stylesheet yet
+- this task should replace the pure landing page with a tiny interactive todo demo
 
 ## Constraints
 - do not add secrets, credentials, tokens, or private infrastructure details
-- prefer a single self-contained `index.html`
-- do not introduce build tools, frameworks, or unnecessary assets
-- keep the page lightweight, readable, and public-safe
+- use plain HTML, CSS, and JavaScript only
+- do not introduce frameworks, package managers, or build tooling
+- keep the UI simple, readable, and public-safe
+- prefer small, well-scoped files
 - avoid modifying unrelated files unless clearly necessary
 
 ## Expected Changes
-- create `index.html`
-- include a title and short description of the sandbox
-- briefly describe the roles of Hermes, Codex CLI, and Gemini CLI
-- mention that `.hermes/` stores durable workflow state
-- add a short note about upcoming sandbox tasks
+- update `index.html` to contain the todo app structure
+- extract styling into `style.css`
+- add `script.js` for interactivity
+- support adding a todo item
+- support marking a todo item completed
+- support deleting a todo item
+- keep a short explanatory note that this is a Hermes workflow sandbox demo
 
 ## Acceptance Criteria
-- `index.html` exists
-- the page renders as a simple readable landing page
-- content matches the public-safe sandbox purpose
-- no extra tooling or unrelated files are introduced
+- `index.html`, `style.css`, and `script.js` exist
+- the page works as a tiny todo app in the browser
+- a user can add, complete, and delete tasks
+- the implementation remains lightweight and dependency-free
+- content stays public-safe and easy to understand
 
 ## Verification
 After changes, verify with:
-- inspect `index.html`
-- review git diff for the new file
+- inspect `index.html`, `style.css`, and `script.js`
+- review git diff for changed files
+- if possible, perform a lightweight browser check
 
 ## Output Format
 Worker should return:
