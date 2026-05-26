@@ -1,16 +1,17 @@
 # Handoff
 
 ## Task
-Define and execute the first real test task using the Hermes -> handoff -> Codex workflow.
+Improve README.md so this sandbox repository clearly explains what it is and how the Hermes workflow is being tested here.
 
 ## Goal
-Use this repository as a sandbox to validate that Hermes can maintain project state, prepare a scoped handoff, and track implementation progress cleanly.
+Replace the minimal README with a useful project overview that documents the purpose of the repo and the roles of Hermes, Codex CLI, and Gemini CLI in the workflow.
 
 ## Project Context
 Short context:
-- this is a public sandbox repository for testing Hermes workflow patterns
-- the durable project state lives under .hermes/
-- Codex should be used for bounded implementation tasks once a concrete coding task is chosen
+- this is a public sandbox repository for testing the Hermes project-state workflow
+- durable task state lives in .hermes/
+- this is the first real implementation-style task after bootstrap
+- the repository should stay simple, explicit, and safe for public viewing
 
 ## Relevant Files
 - README.md
@@ -21,33 +22,35 @@ Short context:
 
 ## Current State
 What already exists now:
-- repository cloned locally
-- baseline .hermes/ workflow files initialized
-- no product code or feature scaffolding exists yet
-- no implementation task has been handed off yet
+- README.md only contains the title and a one-word description
+- .hermes/ workflow files have been initialized and committed
+- no app code exists yet
+- this task should focus only on documentation quality
 
 ## Constraints
-- do not add secrets, credentials, or private business data
-- do not modify unrelated files
+- do not add secrets, credentials, tokens, or private infrastructure details
+- only modify README.md unless a very strong reason appears
 - preserve a lightweight sandbox setup
-- prefer minimal targeted changes
-- keep the first test task simple and easy to verify
+- prefer clear, concise markdown
+- do not invent setup steps that were not actually validated
 
 ## Expected Changes
-- choose one small implementation task for the sandbox
-- prepare a focused handoff for Codex if coding work is needed
-- verify the result and update progress
+- add a short repository description
+- explain that this is a sandbox for Hermes workflow testing
+- describe the role of .hermes/
+- describe the roles of Hermes, Codex CLI, and Gemini CLI at a high level
+- add a brief "next steps" section mentioning upcoming sandbox tasks
 
 ## Acceptance Criteria
-- the next task is clearly scoped
-- required files to edit are identified
-- verification steps are explicit
+- README.md clearly explains the purpose of the repository
+- README.md mentions the .hermes/ project-state folder
+- README.md explains the workflow roles without exposing sensitive details
+- README.md is readable and structured with headings/bullets
 
 ## Verification
 After changes, verify with:
-- git diff review
-- file inspection
-- any lightweight tests relevant to the chosen task
+- inspect README.md content
+- review git diff for README.md
 
 ## Output Format
 Worker should return:

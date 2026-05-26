@@ -1,29 +1,29 @@
 # Task Spec
 
 ## Title
-Bootstrap Hermes project-state workflow for test repository
+Bootstrap and validate Hermes project-state workflow for test repository
 
 ## Goal
-Initialize this test repository with the standard Hermes project-state files so future tasks can be planned, handed off to Codex, and tracked consistently.
+Initialize this test repository with the standard Hermes project-state files and validate the workflow through a sequence of small, controlled tasks.
 
 ## Background
 Context for the task:
 - this is a public sandbox repository created to test the Hermes workflow
-- the repository is currently minimal and contains only a README
+- the repository started minimal and currently contains a README plus .hermes/ workflow files
 - Hermes already uses OmniRoute for model routing, Codex CLI for implementation-heavy work, and Gemini CLI as an optional reviewer
 
 ## Scope
 What is included in this task:
-- create the .hermes/ directory structure
-- add baseline workflow files: spec, handoff, progress, decisions
-- add plans/ directory for future step-specific plans
-- record the initial workflow decision for this repository
+- maintain the .hermes/ directory structure
+- run a sequence of small test tasks through the workflow
+- document progress and decisions as tasks are completed
+- keep the repository safe for public use
 
 ## Out of Scope
 What is explicitly not included:
-- implementing product features
+- implementing sensitive or production functionality
 - adding secrets, tokens, or sensitive configuration
-- setting up CI/CD or deployment
+- setting up CI/CD or deployment unless explicitly requested later
 
 ## Constraints
 - this repository is public, so do not store secrets or sensitive data
@@ -33,18 +33,18 @@ What is explicitly not included:
 
 ## Acceptance Criteria
 The task is complete when:
-- .hermes/spec.md exists and describes the current test workflow goal
-- .hermes/handoff.md exists with a starter handoff for the next task
-- .hermes/progress.md exists and records the bootstrap step
-- .hermes/decisions.md exists and records the visibility/workflow decision
-- .hermes/plans/ exists
+- .hermes/ remains the durable source of workflow state
+- at least one real task is executed through Hermes -> handoff -> Codex -> verification
+- progress and decisions are updated after each meaningful step
+- repository content remains public-safe and easy to understand
 
 ## Risks / Open Questions
 - future public test activity must avoid any sensitive project content
 - a real project repository should still be private by default
+- if git identity matters later, local git config should be set explicitly
 
 ## Current Status
-bootstrapped
+in progress
 
 ## Last Updated
-2026-05-26 20:04
+2026-05-26 20:14
