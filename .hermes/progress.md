@@ -191,3 +191,19 @@ Integrate the deterministic review gate directly into the Codex worktree runner.
 ### Remaining
 - decide whether to record this sandbox smoke-test milestone in git
 - consider adding Gemini CLI later as an optional second-opinion reviewer after authentication is available
+---
+
+## 2026-05-27 00:34
+### Task
+Close scoped task: ux helper smoke task
+
+### Done
+- recorded outcome: discard
+- validated helper-layer contract writing and dry-run execution
+
+### Verified
+- confirmed task_run.py derived the active task from .hermes/handoff.md and printed the integrated runner command
+- confirmed no real Codex execution or product-file change was performed during the smoke test
+
+### Remaining
+- use the helper layer on the next real bounded task when needed
