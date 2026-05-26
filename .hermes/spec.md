@@ -1,51 +1,51 @@
 # Task Spec
 
 ## Title
-Bootstrap and validate Hermes project-state workflow for test repository
+Validate and extend the Hermes project-state workflow in the public sandbox repository
 
 ## Goal
-Initialize this test repository with the standard Hermes project-state files and validate the workflow through a sequence of small, controlled tasks.
+Keep this repository as a small public-safe sandbox for testing durable `.hermes/` state, Codex execution flows, and incremental workflow automation.
 
 ## Background
 Context for the task:
-- this is a public sandbox repository created to test the Hermes workflow
-- the repository started minimal and now contains a README, workflow files, and a simple landing page
-- Hermes already uses OmniRoute for model routing, Codex CLI for implementation-heavy work, and Gemini CLI as an optional reviewer
-- the current phase is validating the workflow through incremental low-risk tasks, including a small interactive frontend example
+- this repository is a public sandbox for testing the Hermes workflow
+- the repository now contains baseline `.hermes/` files, a small todo demo, local worktree support, and a smoke-tested codex task runner
+- Hermes uses OmniRoute for routing and Codex CLI as the main implementation worker
+- Gemini CLI may be added later as an optional reviewer after authentication is available
 
 ## Scope
 What is included in this task:
-- maintain the .hermes/ directory structure
-- run a sequence of small test tasks through the workflow
-- document progress and decisions as tasks are completed
-- keep the repository safe for public use
+- maintain the `.hermes/` project-state files as the durable workflow record
+- validate workflow steps through small, public-safe tasks
+- improve reusable automation around handoff, worktrees, and verification
+- document meaningful progress and durable workflow decisions
 
 ## Out of Scope
 What is explicitly not included:
-- implementing sensitive or production functionality
-- adding secrets, tokens, or sensitive configuration
-- setting up CI/CD or deployment unless explicitly requested later
+- adding secrets, tokens, or private infrastructure details
+- implementing production or sensitive functionality
+- adding deployment, CI/CD, or external integrations unless explicitly requested later
 
 ## Constraints
-- this repository is public, so do not store secrets or sensitive data
+- this repository is public, so all changes must remain public-safe
+- prefer small, inspectable, low-risk tasks
 - avoid unrelated changes
-- prefer minimal targeted edits
-- keep the workflow lightweight and easy to inspect
+- keep the workflow lightweight and easy to reason about
 
 ## Acceptance Criteria
 The task is complete when:
-- .hermes/ remains the durable source of workflow state
-- multiple real tasks are executed through Hermes -> handoff -> Codex -> verification
-- progress and decisions are updated after each meaningful step
-- repository content remains public-safe and easy to understand
+- `.hermes/` remains the durable source of workflow state
+- workflow automation can be validated through real bounded tasks
+- Codex execution stays scoped and independently verifiable
+- repository content remains easy to inspect and safe for public viewing
 
 ## Risks / Open Questions
 - future public test activity must avoid any sensitive project content
-- a real project repository should still be private by default
-- if git identity matters later, local git config should be set explicitly
+- real project repositories should still be private by default
+- review-gate automation is still pending
 
 ## Current Status
 in progress
 
 ## Last Updated
-2026-05-26 20:28
+2026-05-26 21:12

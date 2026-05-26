@@ -114,3 +114,29 @@ Add local worktree ignore support.
 ### Remaining
 - use the new worktree launcher on a future scoped Codex task
 - build the next automation layer: codex task runner
+
+---
+
+## 2026-05-26 21:10
+### Task
+Smoke test the integrated codex worktree task runner.
+
+### Done
+- prepared a bounded README-only smoke test in `.hermes/spec.md` and `.hermes/handoff.md`
+- ran `run_codex_task.py` against `/root/projects/my-project`
+- confirmed the runner created an isolated worktree and launched Codex inside it
+- identified and fixed a real issue: new worktrees were reading stale `.hermes/spec.md` and `.hermes/handoff.md` from `main`
+- updated the runner to sync the latest `.hermes/spec.md` and `.hermes/handoff.md` into the worktree before execution
+- added `--cleanup` support so disposable smoke-test worktrees can be removed automatically after the run
+- reran the smoke test successfully after the fix
+
+### Verified
+- checked `python -m py_compile` for `run_codex_task.py`
+- confirmed the final smoke test created a worktree, ran Codex, printed `git status --short` and `git diff --stat`, and then cleaned up the disposable worktree
+- confirmed Codex made only the bounded README change inside the disposable worktree after the sync fix
+- confirmed the main checkout stayed free of README/app changes after cleanup
+- recorded the remaining main-checkout changes only in `.hermes/spec.md` and `.hermes/handoff.md` as task-state artifacts
+
+### Remaining
+- decide whether to commit and push the worktree runner automation changes
+- implement the next automation layer: review gate
