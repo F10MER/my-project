@@ -9,8 +9,8 @@ Keep the repository ready for the next bounded Hermes -> handoff -> Codex workfl
 ## Project Context
 Short context:
 - this is a public sandbox repository for testing the Hermes project-state workflow
-- the repository already includes a README, `.hermes/` state, a small todo app, local worktree support, and a smoke-tested codex task runner
-- the last completed task validated the integrated codex task runner on a minimal README-only change inside an isolated worktree
+- the repository already includes a README, `.hermes/` state, a small todo app, local worktree support, a smoke-tested codex task runner, and a smoke-tested deterministic review gate
+- the last completed task validated the review gate on a minimal README-only change inside an isolated worktree
 
 ## Relevant Files
 - README.md
@@ -25,7 +25,7 @@ Short context:
 ## Current State
 What already exists now:
 - `.hermes/spec.md` tracks the current sandbox workflow scope
-- `.hermes/progress.md` records the bootstrap, Codex tasks, worktree support, and runner smoke test
+- `.hermes/progress.md` records the bootstrap, Codex tasks, worktree support, runner smoke test, and review gate smoke test
 - no active implementation task is currently queued for Codex
 
 ## Constraints

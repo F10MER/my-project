@@ -140,3 +140,30 @@ Smoke test the integrated codex worktree task runner.
 ### Remaining
 - decide whether to commit and push the worktree runner automation changes
 - implement the next automation layer: review gate
+
+---
+
+## 2026-05-26 21:25
+### Task
+Build and smoke-test the deterministic review gate MVP for Codex worktree tasks.
+
+### Done
+- added `review_codex_task.py` to the reusable `codex-worktree-task` skill
+- documented review gate usage and a minimal command example
+- ran a bounded README-only Codex task in an isolated worktree as the pass-case fixture
+- identified a workflow nuance: synced `.hermes/spec.md` and `.hermes/handoff.md` create expected worktree diffs that should not count against task scope
+- updated the review gate to ignore `.hermes/spec.md` and `.hermes/handoff.md` by default for scope evaluation while still reporting them in raw diff output
+- ran an explicit fail-case by introducing an unexpected `style.css` change and confirmed the gate recommended `revise`
+- removed the temporary unexpected-file change and reran the pass-case successfully
+
+### Verified
+- checked `python -m py_compile` for `review_codex_task.py`
+- confirmed the pass-case returned `review_gate=pass`, `scope_status=pass`, `verification_status=pass`, and `recommended_action=accept`
+- confirmed the fail-case returned `review_gate=fail`, `scope_status=fail`, reported `style.css` as unexpected, and recommended `revise`
+- confirmed the final rerun returned to a clean pass result after removing the injected unexpected diff
+- confirmed the review gate still runs `git diff --check` as the deterministic baseline verification step
+
+### Remaining
+- return `.hermes/handoff.md` to a neutral no-active-task placeholder after the smoke test
+- commit and push the review-gate project-state updates in the sandbox repository
+- evaluate optional Gemini reviewer integration only after the deterministic gate is established
