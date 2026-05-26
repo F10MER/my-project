@@ -167,3 +167,27 @@ Build and smoke-test the deterministic review gate MVP for Codex worktree tasks.
 - return `.hermes/handoff.md` to a neutral no-active-task placeholder after the smoke test
 - commit and push the review-gate project-state updates in the sandbox repository
 - evaluate optional Gemini reviewer integration only after the deterministic gate is established
+
+---
+
+## 2026-05-26 21:45
+### Task
+Integrate the deterministic review gate directly into the Codex worktree runner.
+
+### Done
+- updated `run_codex_task.py` so the runner now accepts repeatable `--allow` and `--check` flags for automatic post-Codex review
+- added `--skip-review` for cases where only Codex/status/diff output is needed
+- updated the runner output to print the review command, review exit code, and review stdout/stderr after Codex execution
+- refreshed the runner usage reference and command example to document the integrated review flow
+- ran a bounded README-only smoke test that exercised runner -> Codex -> automatic review gate with `--cleanup`
+
+### Verified
+- checked `python -m py_compile` for both `run_codex_task.py` and `review_codex_task.py`
+- confirmed the smoke test printed the review command before execution
+- confirmed the automatic gate returned `review_gate=pass`, `scope_status=pass`, `verification_status=pass`, and `recommended_action=accept`
+- confirmed the README-only smoke test stayed scoped while `.hermes/spec.md` and `.hermes/handoff.md` remained visible only as ignored contract diffs in review output
+- confirmed the disposable worktree was cleaned up automatically and the main checkout returned to a clean state after restoring neutral project-state files
+
+### Remaining
+- decide whether to record this sandbox smoke-test milestone in git
+- consider adding Gemini CLI later as an optional second-opinion reviewer after authentication is available

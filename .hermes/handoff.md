@@ -25,7 +25,7 @@ Short context:
 ## Current State
 What already exists now:
 - `.hermes/spec.md` tracks the current sandbox workflow scope
-- `.hermes/progress.md` records the bootstrap, Codex tasks, worktree support, runner smoke test, and review gate smoke test
+- `.hermes/progress.md` records the bootstrap, Codex tasks, worktree support, runner smoke test, review gate smoke test, and runner-integrated review gate smoke test
 - no active implementation task is currently queued for Codex
 
 ## Constraints
