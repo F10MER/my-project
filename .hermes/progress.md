@@ -94,3 +94,23 @@ Build a tiny public-safe todo app through the Hermes -> handoff -> Codex workflo
 ### Remaining
 - commit the todo app and task-state changes
 - optionally run Gemini CLI as a reviewer on the completed demo
+
+---
+
+## 2026-05-26 20:40
+### Task
+Add local worktree ignore support.
+
+### Done
+- added `.worktrees/` to `.gitignore`
+- prepared the repository for local git worktree based task isolation
+- committed the change as `chore: ignore local worktree directories`
+
+### Verified
+- inspected `.gitignore`
+- confirmed git status showed only the intended `.gitignore` addition before commit
+- confirmed the repository is now one commit ahead after the infrastructure change
+
+### Remaining
+- use the new worktree launcher on a future scoped Codex task
+- build the next automation layer: codex task runner
