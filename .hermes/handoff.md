@@ -1,56 +1,56 @@
 # Handoff
 
 ## Task
-Improve README.md so this sandbox repository clearly explains what it is and how the Hermes workflow is being tested here.
+Add a simple public-safe `index.html` landing page for this sandbox repository.
 
 ## Goal
-Replace the minimal README with a useful project overview that documents the purpose of the repo and the roles of Hermes, Codex CLI, and Gemini CLI in the workflow.
+Create a minimal static HTML page that mirrors the repository purpose and briefly explains the Hermes workflow sandbox in a browser-friendly way.
 
 ## Project Context
 Short context:
 - this is a public sandbox repository for testing the Hermes project-state workflow
-- durable task state lives in .hermes/
-- this is the first real implementation-style task after bootstrap
-- the repository should stay simple, explicit, and safe for public viewing
+- the README already explains the workflow in markdown form
+- this is the second small workflow task after the README documentation pass
+- the page should stay intentionally simple and require no build tooling
 
 ## Relevant Files
+- index.html
 - README.md
 - .hermes/spec.md
 - .hermes/handoff.md
 - .hermes/progress.md
-- .hermes/decisions.md
 
 ## Current State
 What already exists now:
-- README.md only contains the title and a one-word description
-- .hermes/ workflow files have been initialized and committed
-- no app code exists yet
-- this task should focus only on documentation quality
+- README.md contains a structured sandbox overview
+- no HTML page exists yet
+- the repository is still intentionally minimal
+- this task should focus on adding one simple static page
 
 ## Constraints
 - do not add secrets, credentials, tokens, or private infrastructure details
-- only modify README.md unless a very strong reason appears
-- preserve a lightweight sandbox setup
-- prefer clear, concise markdown
-- do not invent setup steps that were not actually validated
+- prefer a single self-contained `index.html`
+- do not introduce build tools, frameworks, or unnecessary assets
+- keep the page lightweight, readable, and public-safe
+- avoid modifying unrelated files unless clearly necessary
 
 ## Expected Changes
-- add a short repository description
-- explain that this is a sandbox for Hermes workflow testing
-- describe the role of .hermes/
-- describe the roles of Hermes, Codex CLI, and Gemini CLI at a high level
-- add a brief "next steps" section mentioning upcoming sandbox tasks
+- create `index.html`
+- include a title and short description of the sandbox
+- briefly describe the roles of Hermes, Codex CLI, and Gemini CLI
+- mention that `.hermes/` stores durable workflow state
+- add a short note about upcoming sandbox tasks
 
 ## Acceptance Criteria
-- README.md clearly explains the purpose of the repository
-- README.md mentions the .hermes/ project-state folder
-- README.md explains the workflow roles without exposing sensitive details
-- README.md is readable and structured with headings/bullets
+- `index.html` exists
+- the page renders as a simple readable landing page
+- content matches the public-safe sandbox purpose
+- no extra tooling or unrelated files are introduced
 
 ## Verification
 After changes, verify with:
-- inspect README.md content
-- review git diff for README.md
+- inspect `index.html`
+- review git diff for the new file
 
 ## Output Format
 Worker should return:

@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hermes Workflow Sandbox</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --background: #f5f3ee;
+        --surface: #fffdf9;
+        --text: #20251f;
+        --muted: #566259;
+        --accent: #19634a;
+        --border: #ddd8cc;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        background: var(--background);
+        color: var(--text);
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        line-height: 1.6;
+      }
+
+      main {
+        width: min(760px, calc(100% - 2rem));
+        margin: 0 auto;
+        padding: clamp(3rem, 10vw, 6rem) 0;
+      }
+
+      .label {
+        margin: 0 0 0.75rem;
+        color: var(--accent);
+        font-size: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: clamp(2.25rem, 6vw, 3.4rem);
+        letter-spacing: -0.045em;
+        line-height: 1.1;
+      }
+
+      .intro {
+        max-width: 660px;
+        margin: 1.25rem 0 2.5rem;
+        color: var(--muted);
+        font-size: clamp(1.05rem, 2vw, 1.18rem);
+      }
+
+      section {
+        padding: 1.5rem;
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        background: var(--surface);
+      }
+
+      section + section {
+        margin-top: 1rem;
+      }
+
+      h2 {
+        margin: 0 0 0.85rem;
+        font-size: 1.15rem;
+      }
+
+      p {
+        margin: 0;
+      }
+
+      ul {
+        display: grid;
+        gap: 0.75rem;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      strong {
+        color: var(--accent);
+      }
+
+      code {
+        padding: 0.12rem 0.32rem;
+        border-radius: 5px;
+        background: #ece8df;
+        font-size: 0.95em;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <p class="label">Public sandbox repository</p>
+      <h1>Hermes Workflow Sandbox</h1>
+      <p class="intro">
+        A small, public-safe project for testing controlled task handoffs,
+        durable project context, and lightweight verification.
+      </p>
+
+      <section aria-labelledby="workflow-title">
+        <h2 id="workflow-title">Workflow roles</h2>
+        <ul>
+          <li><strong>Hermes</strong> maintains project context and prepares scoped handoffs.</li>
+          <li><strong>Codex CLI</strong> implements focused changes and reports verification results.</li>
+          <li><strong>Gemini CLI</strong> may act as an optional reviewer after implementation.</li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="state-title">
+        <h2 id="state-title">Durable project state</h2>
+        <p>
+          The <code>.hermes/</code> directory records the specification,
+          handoff, progress, and decisions used across workflow steps.
+        </p>
+      </section>
+
+      <section aria-labelledby="next-title">
+        <h2 id="next-title">Next sandbox tasks</h2>
+        <p>
+          Upcoming exercises may cover small documentation updates, review
+          steps, and verification while keeping every change easy to inspect.
+        </p>
+      </section>
+    </main>
+  </body>
+</html>
